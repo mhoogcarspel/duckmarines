@@ -39,7 +39,7 @@ function OptionsState:buttonPressed(id)
 		setScreenMode()
 	elseif id == "vsync" then
 		playSound("click")
-		config.vsync = not config.vsync
+		config.vsync = config.vsync == 0 and 1 or 0
 		setScreenMode()
 	elseif id == "musicvolume" then
 		playSound("click")

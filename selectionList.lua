@@ -33,9 +33,9 @@ function SelectionList.create(x, y, width, length, spacing, listener)
 end
 
 function SelectionList:draw()
-	love.graphics.setColor(self.backgroundColor)
+	love.graphics.setColor(love.math.colorFromBytes(self.backgroundColor))
 	love.graphics.rectangle("fill", self.x, self.y+14, self.width, self.height-28)
-	love.graphics.setColor(255,255,255,255)
+	love.graphics.setColor(love.math.colorFromBytes(255,255,255,255))
 
 	-- Draw buttons
 	love.graphics.draw(self.imgButton, self.quadButtonLeft, self.x, self.y)
@@ -52,11 +52,11 @@ function SelectionList:draw()
 	end
 
 	-- Draw sides
-	love.graphics.setColor(255, 194, 49)
+	love.graphics.setColor(love.math.colorFromBytes(255, 194, 49))
 	love.graphics.setLineWidth(1)
 	love.graphics.line(self.x+1, self.y+14, self.x+1, self.y+self.height-14)
 	love.graphics.line(self.x+self.width, self.y, self.x+self.width, self.y+self.height)
-	love.graphics.setColor(255, 255, 255)
+	love.graphics.setColor(love.math.colorFromBytes(255, 255, 255))
 
 	love.graphics.setFont(ResMgr.getFont("bold"))
 	for i=1, self.length do
@@ -64,9 +64,9 @@ function SelectionList:draw()
 		if index > #self.labels then break end
 		if i > #self.labels then break end
 		if index == self.selection then
-			love.graphics.setColor(self.selectionColor)
+			love.graphics.setColor(love.math.colorFromBytes(self.selectionColor))
 			love.graphics.rectangle("fill", self.x+1, self.y+(i-1)*self.spacing+14, self.width-2, self.spacing)
-			love.graphics.setColor(255, 255, 255, 255)
+			love.graphics.setColor(love.math.colorFromBytes(255, 255, 255, 255))
 		end
 		love.graphics.print(self.labels[index], self.x+5, self.y+(i-1)*self.spacing+(self.spacing-8)/2+14)
 	end

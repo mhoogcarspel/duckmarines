@@ -44,9 +44,9 @@ function PauseGameState:update()
 end
 
 function PauseGameState:draw()
-	love.graphics.setColor(0, 0, 0, 128)
+	love.graphics.setColor(love.math.colorFromBytes(0, 0, 0, 128))
 	love.graphics.rectangle("fill", 0, 0, WIDTH, HEIGHT)
-	love.graphics.setColor(255,255,255,255)
+	love.graphics.setColor(love.math.colorFromBytes(255,255,255,255))
 end
 
 function PauseGameState:buttonPressed(id, source)

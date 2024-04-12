@@ -81,11 +81,11 @@ function BonusTextParticle:draw()
 	love.graphics.draw(self.bar, self.x-40, self.y+26)
 
 	love.graphics.setFont(ResMgr.getFont("joystix30"))
-	love.graphics.setColor(0, 0, 0, 255)
+	love.graphics.setColor(love.math.colorFromBytes(0, 0, 0, 255))
 	love.graphics.printf(self.text, self.x-75, self.y+3, 150, "center")
-	love.graphics.setColor(self.color)
+	love.graphics.setColor(love.math.colorFromBytes(self.color))
 	love.graphics.printf(self.text, self.x-75, self.y, 150, "center")
-	love.graphics.setColor(255, 255, 255, 255)
+	love.graphics.setColor(love.math.colorFromBytes(255, 255, 255, 255))
 end
 
 function BonusTextParticle:getLayer()

@@ -87,7 +87,8 @@ end
 
 --- Converts boolean value to upper case string
 function boolToStr(val)
-	if val then return "ON"
+	if val == 0 then return "OFF"
+	elseif val then return "ON"
 	else return "OFF" end
 end
 

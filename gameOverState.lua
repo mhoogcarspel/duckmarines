@@ -84,9 +84,9 @@ function GameOverState:update(dt)
 end
 
 function GameOverState:draw()
-	love.graphics.setColor(0, 0, 0, 128)
+	love.graphics.setColor(love.math.colorFromBytes(0, 0, 0, 128))
 	love.graphics.rectangle("fill", 116, 0, WIDTH-116, HEIGHT)
-	love.graphics.setColor(255, 255, 255)
+	love.graphics.setColor(love.math.colorFromBytes(255, 255, 255))
 
 	if self.state == GameOverState.STATE_BARS then
 		-- Draw bars
@@ -113,20 +113,20 @@ function GameOverState:draw()
 				else
 					nexty = 390-self.scores[i]/self.maxstat*292
 				end
-				love.graphics.setColor(0,0,0)
+				love.graphics.setColor(love.math.colorFromBytes(0,0,0))
 				love.graphics.line(122.5+j*48, y+4.5, 122.5+(j+1)*48, nexty+4.5)
 				love.graphics.rectangle("fill", 120+j*48, y+2, 6,6)
-				love.graphics.setColor(colors[i])
+				love.graphics.setColor(love.math.colorFromBytes(colors[i]))
 				love.graphics.line(122.5+j*48, y+2.5, 122.5+(j+1)*48, nexty+2.5)
 				love.graphics.rectangle("fill", 120+j*48, y, 6,6)
 			end
-			love.graphics.setColor(0,0,0)
+			love.graphics.setColor(love.math.colorFromBytes(0,0,0))
 			love.graphics.rectangle("fill", 600, 392-self.scores[i]/self.maxstat*292, 6,6)
-			love.graphics.setColor(colors[i])
+			love.graphics.setColor(love.math.colorFromBytes(colors[i]))
 			love.graphics.rectangle("fill", 600, 390-self.scores[i]/self.maxstat*292, 6,6)
 		end
 	end
-	love.graphics.setColor(255,255,255)
+	love.graphics.setColor(love.math.colorFromBytes(255,255,255))
 end
 
 function GameOverState:buttonPressed(id, source)

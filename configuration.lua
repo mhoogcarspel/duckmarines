@@ -5,7 +5,7 @@ function Config.create()
 	local self = setmetatable({}, Config)
 
 	self.fullscreen = false
-	self.vsync = true
+	self.vsync = 1
 	self.scale = 1
 	self.music_volume = 4
 	self.sound_volume = 4
@@ -24,7 +24,7 @@ function Config:save()
 end
 
 function Config:load()
-	if love.filesystem.exists("config") then
+	if love.filesystem.getInfo("config") then
 		local strdata = love.filesystem.read("config")
 		local data = TSerial.unpack(strdata)
 

@@ -1,6 +1,6 @@
 function love.conf(t)
     t.identity = "duckmarines"
-    t.version = "0.10.0"
+    t.version = "11.5"
     t.console = false
 
     t.window.title = "Duck Marines"
@@ -11,7 +11,7 @@ function love.conf(t)
     t.window.resizable = false
     t.window.fullscreen = false
     t.window.fullscreentype = "exclusive"
-    t.window.vsync = true
+    t.window.vsync = 1
     t.window.fsaa = 0
     t.window.display = 1
 
